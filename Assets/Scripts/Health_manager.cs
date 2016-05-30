@@ -26,15 +26,15 @@ namespace CompleteProject
         {
             if (img.name == "Life3" && health == 2)
             {
-                Destroy(img);
+                img.enabled = false;
             }
             if (img.name == "Life2" && health == 1)
             {
-                Destroy(img);
+                img.enabled = false;
             }
             if (img.name == "Life1" && health == 0)
             {
-                Destroy(img);
+                img.enabled = false;
             }
         }
     }

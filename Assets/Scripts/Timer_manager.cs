@@ -2,23 +2,26 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Timer_manager : MonoBehaviour
+namespace CompleteProject
 {
-    public Text timerLabel;
-
-    private float seconds, minutes;
-
-    void Start()
+    public class Timer_manager : MonoBehaviour
     {
-        timerLabel = GetComponent<Text>() as Text;
-    }
+        public static Text timerLabel;
 
-    void Update()
-    {
-        minutes = (int)(Time.time / 60f); 
-        seconds = (int)(Time.time % 60f);
+        private float seconds, minutes;
 
-        //update the label value
-        timerLabel.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        void Start()
+        {
+            timerLabel = GetComponent<Text>() as Text;
+        }
+
+        void Update()
+        {
+            minutes = (int)(Time.timeSinceLevelLoad / 60f);
+            seconds = (int)(Time.timeSinceLevelLoad % 60f);
+
+            //update the label value
+            timerLabel.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Game_Over_Buttons : MonoBehaviour {
 
@@ -22,6 +23,6 @@ public class Game_Over_Buttons : MonoBehaviour {
 
     public void RestartLevel() //this function will be used on our Play button
     {
-        Application.LoadLevel(NEXT_LEVEL_NAME); //this will load our first level from our build settings. "1" is the second scene in our game
+        SceneManager.LoadScene(NEXT_LEVEL_NAME);//this will load our first level from our build settings. "1" is the second scene in our game
     }
 }

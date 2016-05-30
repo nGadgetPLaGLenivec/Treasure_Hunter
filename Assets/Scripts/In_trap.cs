@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class In_trap : MonoBehaviour {
@@ -52,7 +53,7 @@ public class In_trap : MonoBehaviour {
     {
         if (playerDead)
         {
-            Application.LoadLevel(game_over);
+            SceneManager.LoadScene(game_over);
         }
     }
 
@@ -60,7 +61,7 @@ public class In_trap : MonoBehaviour {
     {
         if (playerWin)
         {
-            Application.LoadLevel(win);
+            SceneManager.LoadScene(win);
         }
     }
 
