@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate() {
         // Cast a ray towards the ground to see if the Walker is grounded
         bool grounded = Physics.Raycast(transform.position, Gravity.normalized, GroundHeight);
-		
+        anim.SetBool("jump", jump);
 		// Rotate the body to stay upright
 		Vector3 gravityForward = Vector3.Cross(Gravity, transform.right);
 		Quaternion targetRotation = Quaternion.LookRotation(gravityForward, -Gravity);
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 		// Add gravity
 		GetComponent<Rigidbody>().AddForce(Gravity * GetComponent<Rigidbody>().mass);
-        if (Mathf.Abs(targetVelocity.z) < 0.1)
+        if (Mathf.Abs(targetVelocity.z) < 0.1 && grounded)
         {
             sound.mute = true;
         }
