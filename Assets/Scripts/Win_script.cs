@@ -15,6 +15,8 @@ public class Win_script : MonoBehaviour
     {
         menuButton = menuButton.GetComponent<Button>();
         exitButton = exitButton.GetComponent<Button>();
+        GameObject myEventSystem = GameObject.Find("EventSystem");
+        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Menu"));
     }
 
     public void ExitPress() //this function will be used on our Exit button

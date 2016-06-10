@@ -14,7 +14,9 @@ public class Game_Over_Buttons : MonoBehaviour {
     {
         restartButton = restartButton.GetComponent<Button>();
         exitButton = exitButton.GetComponent<Button>();
-	}
+        GameObject myEventSystem = GameObject.Find("EventSystem");
+        myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Restart"));
+    }
 
     public void ExitPress() //this function will be used on our Exit button
     {

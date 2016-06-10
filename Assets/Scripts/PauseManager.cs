@@ -20,9 +20,11 @@ public class PauseManager : MonoBehaviour {
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+		if (Input.GetButtonDown("Cancel"))
 		{
-			canvas.enabled = !canvas.enabled;
+            GameObject myEventSystem = GameObject.Find("EventSystem");
+            myEventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Resume"));
+            canvas.enabled = !canvas.enabled;
 			Pause();
 		}
 	}
